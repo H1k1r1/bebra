@@ -636,5 +636,5 @@ As you can see, the prize in medicine was awarded 227 times, and the average lif
 
 ## **Results of the analysis**
 
-Such an analysis of the data showed that the majority of the award winners are men, most of whom are from the United States and the age of the majority: 60-90 years old. Also, most of the awards were in the field of medicine, and the average life expectancy of the laureates was 81 years
+Such an analysis of the data showed that the majority of the award winners are men, most of whom are from the United States and the age of the majority: 60-90 years old. Also, most of the awards were in the field of medicine, and the average life expectancy of the laureates was 81 years.
 """)
