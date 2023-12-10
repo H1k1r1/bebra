@@ -154,6 +154,7 @@ def changetoYearorDel(a):
 st.code('''
 NobelPrizeWinnersdf['born'] = [changetoYearorDel(i) for i in NobelPrizeWinnersdf['born']]
 NobelPrizeWinnersdf['died'] = [changetoYearorDel(i) for i in NobelPrizeWinnersdf['died']]
+NobelPrizeWinnersdf
 ''')
 NobelPrizeWinnersdf['born'] = [changetoYearorDel(i) for i in NobelPrizeWinnersdf['born']]
 NobelPrizeWinnersdf['died'] = [changetoYearorDel(i) for i in NobelPrizeWinnersdf['died']]
@@ -179,7 +180,10 @@ As you can see, empty values('nan') appeared in the column with deaths:
 For now, I'll just replace them with any numeric value to convert the column to int format:
 """)
 
-st.code('''NobelPrizeWinnersdf.fillna(11,inplace = True)''')
+st.code('''
+NobelPrizeWinnersdf.fillna(11,inplace = True)
+NobelPrizeWinnersdf
+''')
 NobelPrizeWinnersdf.fillna(11,inplace = True)
 st.dataframe(NobelPrizeWinnersdf)
 
@@ -192,7 +196,9 @@ st.write(NobelPrizeWinnersdf['died'].unique())
 st.markdown("""
 Now it can be converted to int format, but before that, let's look at the strings with this value:
 """)
-st.code('''find = NobelPrizeWinnersdf[NobelPrizeWinnersdf['died'] == 11].index''')
+st.code('''
+find = NobelPrizeWinnersdf[NobelPrizeWinnersdf['died'] == 11].index
+find''')
 find = NobelPrizeWinnersdf[NobelPrizeWinnersdf['died'] == 11].index
 st.write(find)
 
@@ -214,7 +220,9 @@ Let's convert both columns to int format (the birth rate column is already in th
 
 st.code('''
 NobelPrizeWinnersdf['born'] = NobelPrizeWinnersdf['born'].astype(int)
-NobelPrizeWinnersdf['died'] = NobelPrizeWinnersdf['died'].astype(int)''')
+NobelPrizeWinnersdf['died'] = NobelPrizeWinnersdf['died'].astype(int)
+NobelPrizeWinnersdf
+''')
 NobelPrizeWinnersdf['born'] = NobelPrizeWinnersdf['born'].astype(int)
 NobelPrizeWinnersdf['died'] = NobelPrizeWinnersdf['died'].astype(int)
 st.dataframe(NobelPrizeWinnersdf)
@@ -239,6 +247,7 @@ st.code('''
 NobelPrizeWinnersdf['year'] = NobelPrizeWinnersdf['year'].astype(int)
 NobelPrizeWinnersdf['prizeShare'] = NobelPrizeWinnersdf['prizeShare'].astype(int)
 NobelPrizeWinnersdf['laureateID'] = NobelPrizeWinnersdf['laureateID'].astype(int)
+NobelPrizeWinnersdf
 ''')
 NobelPrizeWinnersdf['year'] = NobelPrizeWinnersdf['year'].astype(int)
 NobelPrizeWinnersdf['prizeShare'] = NobelPrizeWinnersdf['prizeShare'].astype(int)
@@ -257,7 +266,7 @@ st.code('''NobelPrizeWinnersdf['died'].unique()''')
 
 st.write(NobelPrizeWinnersdf['born'].unique())
 st.markdown("""
-Also, let's check the number of Nan in the columns again.
+Also, let's check the number of NaN in the columns again.
 """)
 
 st.code('''NobelPrizeWinnersdf.isna().sum()''')
@@ -390,8 +399,7 @@ st.code('''
 ratio = NobelPrizeWinnersdf.plot(kind='scatter', x='born', y='died',title = 'The ratio of birth to death of Nobel laureates', s=32, alpha=.8)
 plt.gca().spines[['top', 'right',]].set_visible(False)
 ''')
-# ratio = NobelPrizeWinnersdf.plot(kind='scatter', x='born', y='died',title = 'The ratio of birth to death of Nobel laureates', s=32, alpha=.8)
-# plt.gca().spines[['top', 'right',]].set_visible(False)
+
 st.scatter_chart(NobelPrizeWinnersdf,x = 'born', y = 'died',size = 1)
 st.markdown("""
 After ~1900, the grouping became denser and denser, as I assumed.
