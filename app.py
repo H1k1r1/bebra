@@ -451,7 +451,7 @@ for i in NobelPrizeWinnersdf['bornCountry']:
         else:
             d[i] = 1
 
-st.markdown('''
+st.code('''
 SupDf = pd.DataFrame({'bornCountry': d.keys(),'count': d.values()})
 SupDf['count'] = SupDf['count'].astype(int)
 find1 = SupDf[SupDf['count'] <= 19].index
