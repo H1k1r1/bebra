@@ -400,7 +400,7 @@ ratio = NobelPrizeWinnersdf.plot(kind='scatter', x='born', y='died',title = 'The
 plt.gca().spines[['top', 'right',]].set_visible(False)
 ''')
 
-st.scatter_chart(NobelPrizeWinnersdf,x = 'born', y = 'died',s = 32,alpha = .8)
+st.scatter_chart(NobelPrizeWinnersdf,x = 'born', y = 'died',size = 2)
 st.markdown("""
 After ~1900, the grouping became denser and denser, as I assumed.
 
